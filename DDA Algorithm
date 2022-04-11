@@ -1,0 +1,78 @@
+#include<stdio.h>
+//I am Rafiul Islam Robin Khan
+//Daffodil International University
+int main()
+{
+    float m, dy, dx, x1, y1, x2, y2, x0, y0;
+
+    scanf ("%f %f %f %f",&x1, &y1, &x2, &y2);
+
+    // printf("%f %f %f %f\n",x1,y1,x2, y2);
+    dy = y2 - y1;
+
+    dx = x2 - x1;
+
+    m = dy/dx;
+
+   // printf("%f\n",m);
+
+    if (m >=0 && m <= 1)
+    {
+        printf("%f %f\n",x1,y1);
+
+        while(x1 != x2 && y1 != y2)
+        {
+            x1 = x1 + 1;
+            y1 = y1 + m;
+            printf("%f %f\n",x1,y1);
+
+
+        }
+    }
+
+   else if (m <= 0 && m >= -1)
+    {
+        printf("%f %f\n",x1,y1);
+
+        while(x1 != x2 && y1 != y2)
+        {
+            x1 = x1 - 1;
+            y1 = y1 - m;
+            printf("%f %f\n",x1,y1);
+
+
+        }
+    }
+
+    else if ( m > 1)
+   {
+    printf("%f %f\n",x1,y1);
+
+        while(x1 != x2 && y1 != y2)
+        {
+            x1 = x1 + (1/m);
+            y1 = y1 + 1;
+            printf("%f %f\n",x1,y1);
+
+
+        }
+    }
+
+    else if ( m < -1)
+    {
+    printf("%f %f\n",x1,y1);
+
+        while(x1 != x2 && y1 != y2)
+        {
+            x1 = x1 - (1/m);
+            y1 = y1 - 1;
+            printf("%f %f\n",x1,y1);
+
+
+        }
+    }
+
+
+
+ return 0;
+}
