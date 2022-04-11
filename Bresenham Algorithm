@@ -1,0 +1,85 @@
+#include<iostream>
+#include<math.h>
+using namespace std;
+void Bresenham_Algoritm(int x1, int y1, int x2, int y2, int Pk, int dy, int dx);
+
+int main()
+{
+    int x1, y1, x2, y2 , dx, dy, Pk;
+
+
+    cout <<"hey! User Please Enter Your Needed Value in down position "<<endl;
+
+    ///I am Rafiul Islam
+    ///Daffodil international University
+
+    cout <<"X1 = ";
+    cin >>x1;
+    cout<<endl;
+
+    cout <<"Y1 = ";
+    cin >>y1;
+    cout<<endl;
+
+    cout <<"X2 = ";
+    cin >>x2;
+    cout<<endl;
+
+    cout <<"Y2 = ";
+    cin >>y2;
+    cout<<endl;
+
+    dx = x2 - x1;
+
+    dy = y2 - y1;
+
+    Pk = (2*dy) - dx;
+
+
+
+
+    if (Pk >= 0)
+    {
+
+        Bresenham_Algoritm(x1,y1,x2,y2,Pk,dy,dx);
+
+    }
+
+    else
+    {
+
+
+        Bresenham_Algoritm(x1,y1,x2,y2,Pk,dy,dx);
+    }
+
+}
+    void Bresenham_Algoritm(int x1, int y1, int x2, int y2, int Pk, int dy, int dx)
+    {
+
+        while (x1 != x2 && y1 != y2)
+        {
+            if (Pk >= 0)
+            {
+                x1 = x1 + 1;
+                y1 = y1 + 1;
+
+                Pk = Pk + 2*dy - 2*dx;
+
+                cout <<x1<<" , "<<y1<<endl;
+            }
+
+            else
+            {
+
+                x1 = x1 + 1;
+                y1 = y1;
+
+                Pk = Pk + 2*dy;
+
+                cout <<x1<<" , "<<y1<<endl;
+
+            }
+        }
+
+
+    }
